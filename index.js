@@ -1,3 +1,5 @@
+const button = document.getElementById("btn");
+
 const DOMselectors = {
   button: document.getElementByID("btn"),
   text: document.querySelector("#text"),
@@ -8,8 +10,9 @@ const DOMselectors = {
 function backgroundAndText(background, text) {
   background.style.backgroundColor = "red";
   text.innerHTML = "This is now a big red box";
+  text.style.fontSize = "40px";
 }
 
-backgroundAndText();
+backgroundAndText(DOMSelectors.box, DOMSelectors.text);
 
-console.log();
+console.log(button);
