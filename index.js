@@ -1,9 +1,9 @@
 const DOMSelectors = {
-  form: document.getElementByID("user-form"),
+  form: document.getElementById("game-form"),
   name: document.getElementById("name"),
-  desc: document.getElementById("#description"),
+  desc: document.getElementById("description"),
   image: document.getElementById("image-url"),
-  gameList: document.getElementById("Game-List")
+  gameList: document.getElementById("game-list")
 };
 
 function clearInput() {
@@ -14,11 +14,12 @@ function clearInput() {
 function addCard(num) {
   
   const Game = {
-    name: DOMSelectors.nameInput.value,
-    description: DOMSelectors.descriptionInput.value,
-    imageUrl: DOMSelectors.imageUrlInput.value
+    name: DOMSelectors.name.value,
+    desc: DOMSelectors.desc.value,
+    image: DOMSelectors.image.value
   }
-  DOMSelectors.gameList.insertAdjacentElement("beforeend", `<div><h1>${Game.name}</h1><p>${Game.description}</p><img src="${Game.imageUrl}"></div>`);
+  
+  DOMSelectors.gameList.insertAdjacentElement("beforeend", `<div><h1>${Game.name}</h1><p>${Game.desc}</p><img src="${Game.image}"></div>`);
   document
     .querySelector(`#b${num}`)
     .addEventListener("click", function (event) {
