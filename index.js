@@ -15,27 +15,6 @@ function handleFormSubmit(event) {
     imageUrl: DOMSelectors.imageUrlInput.value
   }
 
-  insertUserIntoDOM(Game);
-
-  clearInputFields();
-
-}
-
-function insertUserIntoDOM(Game) {
-
-  const gameCard = document.createElement("div");
-  gameCard.classList.add("card");
-
-  userCard.innerHTML = `
-    <img src="${user.imageUrl} alt="Game Image">
-    <div>
-      <p>Name: ${Game.name}</p>
-      <p>Description: ${Game.description}</p>
-    </div>
-    <button class="remove-btn">Remove</button>
-
-  `;
-
 }
 
 function clearInputFields() {
