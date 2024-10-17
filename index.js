@@ -1,25 +1,30 @@
 const DOMSelectors = {
-  form: document.getElementByID("user-form"),
+  form: document.getElementById("game-form"),
   name: document.getElementById("name"),
   desc: document.getElementById("description"),
   image: document.getElementById("image-url"),
-  gameList: document.getElementById("Game-List"),
+  gameList: document.getElementById("game-list"),
 };
 
 function clearInput() {
   DOMSelectors.name.value = "";
-  DOMSelectors.desc = "";
+  DOMSelectors.desc.value = "";
+}
+
+function removePrompt(num) {
+  DOMSelectors.parentdiv.removeChild(`p${num}`);
 }
 
 function addCard(num) {
   const Game = {
-    name: DOMSelectors.nameInput.value,
-    description: DOMSelectors.descriptionInput.value,
-    imageUrl: DOMSelectors.imageUrlInput.value,
+    name: DOMSelectors.name.value,
+    desc: DOMSelectors.desc.value,
+    image: DOMSelectors.image.value,
   };
-  DOMSelectors.gameList.insertAdjacentElement(
+
+  DOMSelectors.gameList.insertAdjacentHTML(
     "beforeend",
-    `<div><h1>${Game.name}</h1><p>${Game.description}</p><img src="${Game.imageUrl}"></div>`
+    `<div class="card" id="p${num}"><h1>${Game.name}</h1><p>${Game.desc}</p><img class="card img" src="${Game.image}"><button id="b${num}">Delete</button></div>`
   );
   document
     .querySelector(`#b${num}`)
@@ -35,6 +40,7 @@ function run() {
 
     let n = 0;
     addCard(n);
+    clearInput();
     n += 1;
   });
 }
