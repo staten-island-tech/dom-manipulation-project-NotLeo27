@@ -12,7 +12,7 @@ function clearInput() {
 }
 
 function removePrompt(num) {
-  DOMSelectors.parentdiv.removeChild(`p${num}`);
+  DOMSelectors.gameList.removeChild(`p${num}`);
 }
 
 function addCard(num) {
