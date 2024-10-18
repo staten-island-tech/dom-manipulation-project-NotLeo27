@@ -11,10 +11,6 @@ function clearInput() {
   DOMSelectors.desc.value = "";
 }
 
-function removePrompt(num) {
-  DOMSelectors.gameList.removeChild(`p${num}`);
-}
-
 function addCard(num) {
   const Game = {
     name: DOMSelectors.name.value,
@@ -35,10 +31,10 @@ function addCard(num) {
 }
 
 function run() {
+  let n = 0;
   DOMSelectors.form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    let n = 0;
     addCard(n);
     clearInput();
     n += 1;
