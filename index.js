@@ -20,14 +20,16 @@ function addCard(num) {
 
   DOMSelectors.gameList.insertAdjacentHTML(
     "beforeend",
-    `<div class="card" id="p${num}"><h1>${Game.name}</h1><p>${Game.desc}</p><img class="card img" src="${Game.image}"><button id="b${num}">Delete</button></div>`
+    `<div class="card" id="p${num}"><h1>${Game.name}</h1><p>${Game.desc}</p>
+      <img class="card img" src="${Game.image}"><button id="b${num}">Delete</button>
+    </div>`
   );
   document
     .querySelector(`#b${num}`)
     .addEventListener("click", function (event) {
       event.preventDefault();
       document.querySelector(`#p${num}`).remove();
-    });
+  });
 }
 
 function run() {
