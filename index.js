@@ -3,7 +3,7 @@ const DOMSelectors = {
   name: document.getElementById("name"),
   desc: document.getElementById("description"),
   image: document.getElementById("image-url"),
-  gameList: document.getElementById("game-list"),
+  gameList: document.getElementById("gameList"),
 };
 
 function clearInput() {
