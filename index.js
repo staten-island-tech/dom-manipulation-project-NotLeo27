@@ -21,25 +21,25 @@ function addCard(num) {
   DOMSelectors.gameList.insertAdjacentHTML(
     "beforeend",
     `<div class="card" id="p${num}"><h1>${Game.name}</h1><p>${Game.desc}</p>
-      <img class="card img" src="${Game.image}"><button id="b${num}">Delete</button>
+      <img class="card img" src="${Game.image}"><button id="button${num}">Delete</button>
     </div>`
   );
   document
-    .querySelector(`#b${num}`)
+    .querySelector(`#button${num}`)
     .addEventListener("click", function (event) {
       event.preventDefault();
       document.querySelector(`#p${num}`).remove();
-  });
+    });
 }
 
 function run() {
-  let n = 0;
+  let x = 0;
   DOMSelectors.form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    addCard(n);
+    addCard(x);
     clearInput();
-    n += 1;
+    x += 1;
   });
 }
 
